@@ -10,17 +10,20 @@ import { CreateCvDto } from './dto/create-cv.dto';
 import { UpdateCvDto } from './dto/update-cv.dto';
 import { CVData, CvDocument } from './schema/cv.schema';
 import { PaginationOptions } from 'src/interfaces/pagination-options.interface';
+import { CvGateway } from './cv.gateway';
 
 @Injectable()
 export class CvService {
   constructor(
     @InjectModel(CVData.name) private readonly cvModel: Model<CVData>,
+    private readonly cvGateway: CvGateway,
   ) {}
 
   // Créer un CV
   async create(createCvDto: CreateCvDto) {
     try {
       const cv = await this.cvModel.create(createCvDto);
+      this.cvGateway.cvCreated(cv);
       return {
         success: true,
         message: 'CV créé avec succès.',

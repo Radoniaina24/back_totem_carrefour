@@ -4,6 +4,7 @@ import { CvController } from './cv.controller';
 import { MongooseModule } from '@nestjs/mongoose';
 import { CVData, CVDataSchema } from './schema/cv.schema';
 import { CloudinaryModule } from 'src/cloudinary/cloudinary.module';
+import { CvGateway } from './cv.gateway';
 
 @Module({
   imports: [
@@ -11,7 +12,7 @@ import { CloudinaryModule } from 'src/cloudinary/cloudinary.module';
     CloudinaryModule,
   ],
   controllers: [CvController],
-  providers: [CvService],
+  providers: [CvService, CvGateway],
   exports: [CvService],
 })
 export class CvModule {}
