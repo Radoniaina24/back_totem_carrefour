@@ -38,13 +38,30 @@ export class CvService {
   }
 
   //  Récupérer tous les CVs
-  async findAll(paginationOptions: PaginationOptions = { page: 1, limit: 10 }) {
-    const { page, limit } = paginationOptions;
+  async findAll(
+    paginationOptions: PaginationOptions = { page: 1, limit: 10, search: '' },
+  ) {
+    const { page, limit, search } = paginationOptions;
     const skip = (page - 1) * limit;
+    const searchFilter = search
+      ? {
+          $or: [
+            { 'personalInfo.email': { $regex: search, $options: 'i' } },
+            { 'personalInfo.firstName': { $regex: search, $options: 'i' } },
+            { 'personalInfo.lastName': { $regex: search, $options: 'i' } },
+            {
+              'personalInfo.professionalTitle': {
+                $regex: search,
+                $options: 'i',
+              },
+            },
+          ],
+        }
+      : {};
     try {
       const [cv, total] = await Promise.all([
-        this.cvModel.find().skip(skip).limit(limit).exec(),
-        this.cvModel.countDocuments().exec(),
+        this.cvModel.find(searchFilter).skip(skip).limit(limit).exec(),
+        this.cvModel.countDocuments(searchFilter).exec(),
       ]);
 
       return {
