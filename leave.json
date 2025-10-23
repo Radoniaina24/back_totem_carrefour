@@ -1,0 +1,87 @@
+[
+   ,
+   
+   
+   
+    {
+      "leaveTypeId": "689481d18b6606f4a7b35e85",
+      "startDate": "2025-08-10",
+      "endDate": "2025-08-12",
+      "reason": "Raison personnelle",
+      "employeeName": "Hanta Rabe",
+      "userId": "689593ec321cfab0286586c1",
+      "managerIds": ["687e10dbc85ec61be7008395"]
+    },
+    {
+      "leaveTypeId": "689481d18b6606f4a7b35e85",
+      "startDate": "2025-07-01",
+      "endDate": "2025-07-04",
+      "reason": "Mariage d’un proche",
+      "employeeName": "Lova Ravakiniaina",
+      
+      "managerIds": [ "687e10dbc85ec61be7008395"]
+    },
+    {
+      "leaveTypeId": "689481d18b6606f4a7b35e85",
+      "startDate": "2025-06-15",
+      "endDate": "2025-06-17",
+      "reason": "Repos bien mérité",
+      "employeeName": "Toky Ranaivo",
+      "userId": "689593ec321cfab0286586c1",
+      "managerIds": ["6895947d321cfab0286586c4"]
+    },
+  
+    {
+      "leaveTypeId": "689481d18b6606f4a7b35e85",
+      "startDate": "2025-05-25",
+      "endDate": "2025-05-26",
+      "reason": "Déménagement",
+      "employeeName": "Sarah Rasoanaivo",
+      "userId": "689593ec321cfab0286586c1",
+      "managerIds": ["6895947d321cfab0286586c4", "687e10dbc85ec61be7008395"]
+    },
+    {
+      "leaveTypeId": "689481d18b6606f4a7b35e85",
+      "startDate": "2025-05-28",
+      "endDate": "2025-05-30",
+      "reason": "Repos santé mentale",
+      "employeeName": "Lova Ravakiniaina",
+     
+      "managerIds": ["6895947d321cfab0286586c4", "687e10dbc85ec61be7008395"]
+    },
+    {
+      "leaveTypeId": "689481d18b6606f4a7b35e85",
+      "startDate": "2025-06-02",
+      "endDate": "2025-06-06",
+      "reason": "Formation professionnelle",
+      "employeeName": "Luc Rakotondranaivo",
+      "userId": "689593ec321cfab0286586c1",
+      "managerIds": ["6895947d321cfab0286586c4", "687e10dbc85ec61be7008395"]
+    },
+  
+    {
+      "leaveTypeId": "689481d18b6606f4a7b35e85",
+      "startDate": "2025-08-01",
+      "endDate": "2025-08-03",
+      "reason": "Travaux à domicile",
+      "employeeName": "Benja Rabesandratana",
+      "userId": "689593ec321cfab0286586c1",
+      "managerIds": ["6895947d321cfab0286586c4", "687e10dbc85ec61be7008395"]
+    },
+    {
+      "leaveTypeId": "689481d18b6606f4a7b35e85",
+      "startDate": "2025-06-10",
+      "endDate": "2025-06-12",
+      "reason": "Motif personnel",
+      "employeeName": "Lova Ravakiniaina",
+      
+      "managerIds": ["6895947d321cfab0286586c4", "687e10dbc85ec61be7008395"]
+    },
+    
+    
+   
+   
+  
+   
+  ]
+  

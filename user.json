@@ -1,0 +1,44 @@
+[
+  {
+    "firstName": "Alice",
+    "lastName": "Dupont",
+    "email": "alice.dupont@example.com",
+    "password": "Password123!",
+    "roles": ["admin"]
+  },
+  {
+    "firstName": "Bernard",
+    "lastName": "Martin",
+    "email": "bernard.martin@example.com",
+    "password": "Secret456!",
+    "roles": ["manager"]
+  },
+  {
+    "firstName": "Claire",
+    "lastName": "Nguyen",
+    "email": "claire.nguyen@example.com",
+    "password": "Motdepasse789!",
+    "roles": ["employee"]
+  },
+  {
+    "firstName": "David",
+    "lastName": "Morel",
+    "email": "david.morel@example.com",
+    "password": "Superpass2025!",
+    "roles": ["RH"]
+  },
+  {
+    "firstName": "Emma",
+    "lastName": "Diallo",
+    "email": "emma.diallo@example.com",
+    "password": "EmmaSecure#11",
+    "roles": ["employee"]
+  },
+  {
+    "firstName": "Fabrice",
+    "lastName": "Tchoumi",
+    "email": "fabrice.tchoumi@example.com",
+    "password": "FabriPass@22",
+    "roles": ["employee", "RH"]
+  }
+]
