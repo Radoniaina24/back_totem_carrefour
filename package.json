@@ -47,7 +47,9 @@
     "reflect-metadata": "^0.2.2",
     "rxjs": "^7.8.1",
     "streamifier": "^0.1.1",
-    "typeorm": "^0.3.25"
+    "typeorm": "^0.3.25",
+    "@types/express": "^5.0.4",
+    "@types/multer": "^2.0.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.2.0",
