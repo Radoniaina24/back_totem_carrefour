@@ -14,8 +14,10 @@ async function bootstrap() {
 
   // Important : activer CORS pour que le frontend puisse envoyer les cookies
   app.enableCors({
-    origin: 'https://totem-carrefour.vercel.app/', //  mets ici l'URL de ton frontend
+    origin: 'https://totem-carrefour.vercel.app', //  mets ici l'URL de ton frontend
     credentials: true, //  autorise l’envoi de cookies
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
   });
 
   await app.listen(3000); // ou ton port habituel
