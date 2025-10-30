@@ -23,14 +23,13 @@ import { CurrentUserId } from 'src/common/decorators/current-user-id.decorator';
 @Controller('users')
 export class UserController {
   constructor(private readonly userService: UserService) {}
-  @UseGuards(JwtAuthGuard, RolesGuard)
-  @Roles('admin', 'RH')
+
   @Post()
   async create(@Body() createUserDto: CreateUserDto, @Res() res: Response) {
     try {
       const user = await this.userService.create(createUserDto);
       res.status(HttpStatus.CREATED).json({
-        message: 'Utilisateur créé avec succès',
+        message: 'Profil créé avec succès',
         user,
       });
     } catch (error) {
@@ -39,9 +38,6 @@ export class UserController {
       });
     }
   }
-
-  @UseGuards(JwtAuthGuard, RolesGuard)
-  @Roles('admin', 'RH')
   @Get()
   async findAll(
     @CurrentUserId() userId: string,
@@ -68,8 +64,6 @@ export class UserController {
     }
   }
 
-  @UseGuards(JwtAuthGuard, RolesGuard)
-  @Roles('admin', 'manager', 'employee', 'RH')
   @Get('/tasks')
   async findAllUserFor(@Res() res: Response) {
     try {
@@ -83,8 +77,7 @@ export class UserController {
       });
     }
   }
-  @UseGuards(JwtAuthGuard, RolesGuard)
-  @Roles('admin', 'RH')
+
   @Get(':id')
   async findOne(@Param('id') id: string, @Res() res: Response) {
     try {
@@ -99,8 +92,6 @@ export class UserController {
     }
   }
 
-  @UseGuards(JwtAuthGuard, RolesGuard)
-  @Roles('admin', 'RH')
   @Patch(':id')
   async update(
     @Param('id') id: string,
@@ -120,8 +111,6 @@ export class UserController {
     }
   }
 
-  @UseGuards(JwtAuthGuard, RolesGuard)
-  @Roles('admin', 'RH')
   @Delete(':id')
   async remove(@Param('id') id: string, @Res() res: Response) {
     try {

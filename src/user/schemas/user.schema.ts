@@ -40,20 +40,11 @@ export class User {
 
   @Prop({
     type: [String],
-    enum: ['manager', 'admin', 'employee','RH'],
+    enum: ['admin', 'candidate', 'recruiter'],
     required: true,
-    default: ['employee'],
+    default: ['candidate'],
   })
-  roles: ('manager' | 'admin' | 'employee'|'RH')[];
-
-  @Prop({ type: Types.ObjectId, ref: 'Department' })
-  departmentId: Types.ObjectId;
-
-  @Prop({ type: Types.ObjectId, ref: 'Service' })
-  serviceId: Types.ObjectId;
-
-  @Prop({ type: Types.ObjectId, ref: 'User' })
-  managerId: Types.ObjectId;
+  roles: ('admin' | 'candidate' | 'recruiter')[];
 }
 
 export const UserSchema = SchemaFactory.createForClass(User);

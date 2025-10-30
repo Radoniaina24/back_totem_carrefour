@@ -5,10 +5,16 @@ import {
   Res,
   HttpStatus,
   HttpCode,
+  Req,
+  Get,
+  UseGuards,
 } from '@nestjs/common';
 import { AuthService } from './auth.service';
 import { LoginDto } from './dto/login.dto';
 import { Response } from 'express';
+import { JwtAuthGuard } from './guard/jwt-auth.guard';
+import { RolesGuard } from './guard/roles.guard';
+import { CurrentUserId } from 'src/common/decorators/current-user-id.decorator';
 
 @Controller('auth')
 export class AuthController {
@@ -44,5 +50,10 @@ export class AuthController {
   async logout(@Res({ passthrough: true }) res: Response) {
     res.clearCookie('access_token');
     return { message: 'Déconnexion réussie' };
+  }
+  @UseGuards(JwtAuthGuard)
+  @Get('me')
+  async getCurrentUser(@CurrentUserId() userId: string) {
+    return this.authService.getAuthenticatedUser(userId);
   }
 }

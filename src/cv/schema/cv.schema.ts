@@ -1,5 +1,5 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
-import { Document } from 'mongoose';
+import { Document, Types } from 'mongoose';
 
 // ====================
 // 🧩 Sous-schemas
@@ -129,6 +129,9 @@ export const LanguageSchema = SchemaFactory.createForClass(Language);
 
 @Schema({ timestamps: true })
 export class CVData extends Document {
+  @Prop({ type: Types.ObjectId, ref: 'User', required: true })
+  user: Types.ObjectId;
+
   @Prop({ type: PersonalInfoSchema, required: true })
   personalInfo: PersonalInfo;
 

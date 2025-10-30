@@ -6,8 +6,6 @@ import {
   IsArray,
   ArrayNotEmpty,
   IsString,
-  IsMongoId,
-  IsOptional,
 } from 'class-validator';
 
 export class CreateUserDto {
@@ -30,20 +28,9 @@ export class CreateUserDto {
 
   @IsArray({ message: 'Le rôle doit être un tableau' })
   @ArrayNotEmpty({ message: 'Le tableau de rôles ne doit pas être vide' })
-  @IsEnum(['manager', 'admin', 'employee'], {
+  @IsEnum(['admin', 'candidate', 'recruiter'], {
     each: true,
     message: 'Rôle invalide',
   })
-  roles: ('manager' | 'admin' | 'employee'|'RH')[];
-  @IsMongoId()
-  @IsOptional()
-  departmentId?: string;
-
-  @IsMongoId()
-  @IsOptional()
-  serviceId?: string;
-
-  @IsMongoId()
-  @IsOptional()
-  managerId?: string;
+  roles: ('manager' | 'admin' | 'employee' | 'RH')[];
 }

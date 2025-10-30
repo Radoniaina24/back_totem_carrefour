@@ -23,4 +23,7 @@ export class CvGateway implements OnGatewayInit {
   cvCreated(task: CVData) {
     this.server.emit('cvCreated', task);
   }
+  cvUpdated(task: CVData) {
+    this.server.emit('cvUpdated', task);
+  }
 }

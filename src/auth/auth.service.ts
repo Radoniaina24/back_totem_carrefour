@@ -34,4 +34,12 @@ export class AuthService {
       user,
     };
   }
+  async getAuthenticatedUser(userId: string) {
+    const user = await this.userService.findOne(userId);
+    if (!user) {
+      throw new UnauthorizedException('Utilisateur non trouvé ou inactif');
+    }
+
+    return user;
+  }
 }

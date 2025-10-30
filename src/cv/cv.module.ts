@@ -5,10 +5,14 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { CVData, CVDataSchema } from './schema/cv.schema';
 import { CloudinaryModule } from 'src/cloudinary/cloudinary.module';
 import { CvGateway } from './cv.gateway';
+import { User, UserSchema } from 'src/user/schemas/user.schema';
 
 @Module({
   imports: [
-    MongooseModule.forFeature([{ name: CVData.name, schema: CVDataSchema }]),
+    MongooseModule.forFeature([
+      { name: CVData.name, schema: CVDataSchema },
+      { name: User.name, schema: UserSchema },
+    ]),
     CloudinaryModule,
   ],
   controllers: [CvController],

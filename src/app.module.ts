@@ -28,11 +28,13 @@ import { CvModule } from './cv/cv.module';
 })
 export class AppModule {
   configure(consumer: MiddlewareConsumer) {
-    consumer
-      .apply(UserIdMiddleware)
-      .forRoutes(
-        { path: 'user-profiles/me', method: RequestMethod.ALL },
-        { path: 'users', method: RequestMethod.ALL },
-      );
+    consumer.apply(UserIdMiddleware).forRoutes(
+      { path: 'user-profiles/me', method: RequestMethod.ALL },
+      { path: 'auth/me', method: RequestMethod.ALL },
+      { path: 'cv', method: RequestMethod.ALL },
+      { path: 'cv/myCv', method: RequestMethod.GET },
+      { path: 'cv/updateMyCv/:id', method: RequestMethod.PATCH },
+      // { path: 'users', method: RequestMethod.ALL },
+    );
   }
 }
