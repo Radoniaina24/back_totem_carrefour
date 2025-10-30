@@ -19,7 +19,7 @@ async function bootstrap() {
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization'],
   });
-
+  // app.set('trust proxy', 1);
   await app.listen(3000); // ou ton port habituel
 }
 bootstrap();

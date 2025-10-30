@@ -28,9 +28,10 @@ export class AuthController {
 
       res.cookie('access_token', access_token, {
         httpOnly: true,
-        secure: true,
-        sameSite: 'strict',
-        maxAge: 24 * 60 * 60 * 1000,
+        secure: process.env.NODE_ENV === 'production', // secure uniquement en prod
+        sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'lax', // important pour HTTPS
+        maxAge: 24 * 60 * 60 * 1000, // 1 jour
+        path: '/', // assure la disponibilité sur tout le domaine
       });
 
       res.status(HttpStatus.OK).json({
