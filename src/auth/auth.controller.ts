@@ -28,9 +28,13 @@ export class AuthController {
 
       res.cookie('access_token', access_token, {
         httpOnly: true,
-        secure: process.env.NODE_ENV === 'production', // secure uniquement en prod
-        sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'lax', // important pour HTTPS
-        maxAge: 7 * 24 * 60 * 60 * 1000, // 7 jours
+        // secure: process.env.NODE_ENV === 'production', // secure uniquement en prod
+        // sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'lax', // important pour HTTPS
+
+        secure: true, // secure uniquement en prod
+        sameSite: 'none',
+
+        maxAge: 7 * 24 * 60 * 60 * 1000, // 7 jourss
         path: '/', // assure la disponibilité sur tout le domaine
       });
 
