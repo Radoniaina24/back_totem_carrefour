@@ -30,7 +30,7 @@ export class AuthController {
         httpOnly: true,
         secure: process.env.NODE_ENV === 'production', // secure uniquement en prod
         sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'lax', // important pour HTTPS
-        maxAge: 24 * 60 * 60 * 1000, // 1 jour
+        maxAge: 7 * 24 * 60 * 60 * 1000, // 7 jours
         path: '/', // assure la disponibilité sur tout le domaine
       });
 
